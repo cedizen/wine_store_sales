@@ -1,3 +1,5 @@
+![Python](https://img.shields.io/badge/Python-blue?logo=python) ![Jupyter](https://img.shields.io/badge/Jupyter-orange?logo=jupyter) ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+
 # Projet : analyse des données de stock et de ventes d'un site de vente en ligne de vin
 
 ## Présentation du projet
