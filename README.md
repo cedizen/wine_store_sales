@@ -23,6 +23,9 @@ Trois fichiers Excel ont été utilisés et fusionnés pour cette analyse :
 *   'web.xlsx' : données produits du site web (référence SKU, ventes totales, type de produit).  
 *   'liaison.xlsx' : fichier de correspondance entre 'product_id' (ERP) et 'id_web' (site web).
 
+## Importation des données
+Placer les fichiers xlsx dans le dossier data
+
 ## Résultats clés et insights
 
 *   **Nettoyage des données** : correction des prix négatifs, gestion des incohérences de statut de stock et traitement des SKU mal formatés ou manquants.  
