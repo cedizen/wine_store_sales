@@ -24,9 +24,9 @@ Trois fichiers Excel ont été utilisés et fusionnés pour cette analyse :
 *   'liaison.xlsx' : fichier de correspondance entre 'product_id' (ERP) et 'id_web' (site web).
 
 ## Comment lancer le projet
-**1. Importer le fichier dans Jupyter ou Collab**
-**2. Importer les fichiers CSV contenant les données**
-**3. Lancer l'exécution des différentes cellules**
+*   **1. Importer le fichier dans Jupyter ou Collab**
+*   **2. Importer les fichiers CSV contenant les données**
+*   **3. Lancer l'exécution des différentes cellules**
 
 ## Résultats clés et insights
 
