@@ -25,7 +25,7 @@ Trois fichiers Excel ont été utilisés et fusionnés pour cette analyse :
 
 ## Comment lancer le projet
 *   **1. Importer le fichier dans Jupyter ou Collab**
-*   **2. Importer les fichiers CSV contenant les données**
+*   **2. Importer les fichiers CSV dans le dossier '/data' contenant les données**
 *   **3. Lancer l'exécution des différentes cellules**
 
 ## Résultats clés et insights
