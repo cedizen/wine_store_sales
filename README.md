@@ -1,40 +1,99 @@
 ![Python](https://img.shields.io/badge/Python-blue?logo=python) ![Jupyter](https://img.shields.io/badge/Jupyter-orange?logo=jupyter) ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
-# Projet : analyse des données de stock et de ventes d'un site de vente en ligne de vin
+# Analyse des ventes d'une boutique de vins
 
-## Présentation du projet
+Ce projet présente une analyse de données réalisée à partir de plusieurs fichiers liés à l'activité d'une boutique de vins en ligne.
 
-Ce projet a pour objectif d’analyser les données de stock, de ventes et de prix d’un site de vente en ligne de vins, afin d’identifier les produits phares, les surstocks, les marges optimales et les tendances de prix. L’analyse repose sur la fusion de données issues d’un ERP, du site web et d’un fichier de liaison entre les deux systèmes.
+L'idée était d'explorer les données disponibles, de vérifier leur qualité, puis d'en tirer quelques premiers constats sur les ventes, les stocks et la rentabilité des produits.
 
-## Objectifs du Projet
+## À propos du projet
 
-*   **Exploration des données** : nettoyer et comprendre la structure des données issues de l'ERP, du site web et du fichier de liaison.  
-*   **Analyse des prix** : identifier les prix aberrants et les justifier.  
-*   **Analyse des ventes** : calculer le Chiffre d’Affaires (CA), analyser les quantités vendues et identifier les produits phares et ceux moins performants.  
-*   **Analyse des stocks** : évaluer la rotation des stocks, valoriser le stock total et détecter les surstocks potentiels.  
-*   **Analyse de la marge** : calculer le taux de marge et la marge brute par produit et par catégorie.  
-*   **Corrélations** : étudier les relations entre les variables clés (prix, stock, ventes) pour identifier des tendances.
+Le travail s'appuie sur plusieurs sources de données : catalogue produits, informations de stock, ventes et données issues du site e-commerce.
 
-## Données utilisées
+L'objectif n'était pas seulement de produire quelques indicateurs, mais aussi de repartir sur une base propre et cohérente. Une partie importante du projet a donc consisté à repérer les valeurs manquantes, les doublons et certaines incohérences dans les données avant de passer à l'analyse.
 
-Trois fichiers Excel ont été utilisés et fusionnés pour cette analyse :
+## Ce qu'on trouve dans ce repo
 
-*   'erp.xlsx' : informations produit du système ERP (ID, prix, quantité en stock, prix d’achat).  
-*   'web.xlsx' : données produits du site web (référence SKU, ventes totales, type de produit).  
-*   'liaison.xlsx' : fichier de correspondance entre 'product_id' (ERP) et 'id_web' (site web).
+- `project_bottleneck.ipynb` : notebook principal avec le nettoyage, les contrôles qualité, la fusion des données et l'analyse.
+- éventuellement d'autres fichiers de données ou notebooks complémentaires selon l'organisation du projet.
+- `README.md` : présentation du projet.
 
-## Comment lancer le projet
-*   **1. Importer le fichier dans Jupyter ou Collab**
-*   **2. Importer les fichiers CSV dans le dossier '/data' contenant les données**
-*   **3. Lancer l'exécution des différentes cellules**
+## Ce qui a été fait
 
-## Résultats clés et insights
+Dans ce notebook, on retrouve notamment :
 
-*   **Nettoyage des données** : correction des prix négatifs, gestion des incohérences de statut de stock et traitement des SKU mal formatés ou manquants.  
-*   **Identification des outliers de prix** : certains produits à prix très élevés ont été repérés, mais ils correspondent à une gamme de vins haut de gamme légitime, représentant environ 4,62 % du catalogue.  
-*   **Chiffre d’Affaires (CA)** : le CA global du site est de 153 365,7 € TTC. Le principe de Pareto indique que près de 58,85 % des articles génèrent 80 % du CA.  
-*   **Rotation des stocks** : certains produits, notamment dans la catégorie “Champagne”, présentent une rotation de stock très faible, suggérant des surstocks possibles.  
-*   **Taux de marge** : après correction d’une erreur de saisie importante (-634,99 % corrigée), le taux de marge s’étend désormais de 22,78 % à 47,76 %.  
-*   **Corrélations** :  
-    *   forte corrélation (0,98) entre le prix d’achat ('purchase_price') et le prix de vente ('prix_HT'), ce qui est cohérent avec la logique de rentabilité ;  
-    *   corrélations faibles mais indicatives entre stock, ventes et prix, suggérant que des stocks plus élevés et des prix plus bas tendent à être associés à des volumes de ventes légèrement supérieurs.
+- un contrôle de la qualité des données ;
+- la mise en relation de plusieurs fichiers ;
+- une analyse des ventes par produit ;
+- un travail autour du chiffre d'affaires ;
+- une première lecture des marges ;
+- quelques points d'attention sur les stocks.
+
+L'idée était surtout de mieux comprendre l'activité et d'identifier les produits qui ressortent, soit par leurs ventes, soit par leur rentabilité, soit par des écarts entre stock et niveau de vente.
+
+## Outils utilisés
+
+Le projet a été réalisé en Python, principalement avec :
+
+- `pandas`
+- `numpy`
+- `matplotlib` / `seaborn`
+- Jupyter Notebook
+
+## Lancer le projet
+
+1. Cloner le repo :
+
+```bash
+git clone https://github.com/cedizen/wine_store_sales.git
+cd wine_store_sales
+```
+
+2. Créer un environnement virtuel si besoin :
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+Sous Windows :
+
+```bash
+.\.venv\Scripts\activate
+```
+
+3. Installer les dépendances si un fichier `requirements.txt` est ajouté :
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Lancer Jupyter Notebook :
+
+```bash
+jupyter notebook
+```
+
+5. Ouvrir `project_bottleneck.ipynb` et exécuter les cellules dans l'ordre.
+
+## Pourquoi ce projet
+
+Ce projet correspond à une première phase d'analyse : comprendre les données, les fiabiliser et commencer à dégager quelques enseignements utiles.
+
+C'est un travail assez proche de ce qu'on peut faire au début d'une mission data : avant de vouloir aller vers du prédictif ou du dashboard, il faut déjà savoir si les données sont propres, reliables et exploitables.
+
+## Pistes pour aller plus loin
+
+Quelques prolongements possibles :
+
+- ajouter plus de visualisations ;
+- construire un petit dashboard ;
+- approfondir l'analyse des marges ;
+- travailler sur l'optimisation des stocks ;
+- tester une approche de prévision des ventes.
+
+## Auteur
+
+Projet réalisé par Cédric Berthezene.
+
+GitHub : [cedizen](https://github.com/cedizen)
